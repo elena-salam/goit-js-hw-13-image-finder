@@ -6,7 +6,7 @@ import apiService from './js/apiService';
 const refs={
     searchForm: document.querySelector('#search-form'),
     gallery: document.querySelector('#gallery'),
-    loadMoreBtn: document.querySelector('button[data-action="load-more"]')
+    loadMoreBtn: document.querySelector('button[data-action="load-more"]'),
 }
 
 refs.searchForm.addEventListener('submit', searchFormSubmitHandler);
@@ -31,21 +31,11 @@ function loadMoreBtnHandler(e){
         const markup = buildListItemsMarkup(hits);
         insertListItems(markup);
     });
-    
-    https://learn.javascript.ru/metrics-window
-
     window.scrollTo({
         top: document.documentElement.scrollHeight,
         left: 0,
         behavior: 'smooth',
       });
-
-  //вариант рабочий, адаптивный, но кустарный: Нагуглила на форумах 
-//     let i = 500;
-//    setInterval(function() {
-//     window.scrollTo(0, i);
-//     i += 500;
-//    },20)
 }
 
 function insertListItems(items){
